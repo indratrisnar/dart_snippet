@@ -1,0 +1,166 @@
+{
+    "regular test": {
+        "prefix": "aaatest",
+        "body": [
+            "test(",
+            "  '$0',",
+            "  () async {",
+            "    // arrange",
+            "",
+            "    // act",
+            "",
+            "    // assert",
+            "  },",
+            ");"
+        ]
+    },
+    "widget test": {
+        "prefix": "aaatwidget",
+        "body": [
+            "testWidgets(",
+            "  '$0',",
+            "   (tester) async {",
+            "   // arrange",
+            "",
+            "   // act",
+            "",
+            "   // assert",
+            "   },",
+            ");"
+        ]
+    },
+    "common container": {
+        "prefix": "common_container",
+        "body": [
+            "Container(",
+            "  width: 50,",
+            "  height: 50,",
+            "  decoration: BoxDecoration(",
+            "    borderRadius: BorderRadius.circular(0),",
+            "    color: Color(0xff),",
+            "  ),",
+            ")$0"
+        ]
+    },
+    "common text": {
+        "prefix": "common_text",
+        "body": [
+            "Text(",
+            "  '$0',",
+            "  style: TextStyle(",
+            "    fontWeight: FontWeight.w400,",
+            "    fontSize: 14,",
+            "    color: Color(0xff),",
+            "  ),",
+            "),"
+        ]
+    },
+    "common gradient": {
+        "prefix": "common_gradient",
+        "body": [
+            "LinearGradient(",
+            "  begin: Alignment.topCenter,",
+            "  end: Alignment.bottomCenter,",
+            "  colors: [",
+            "    Color(0xff$0),",
+            "    Color(0xff),",
+            "  ],",
+            "),"
+        ]
+    },
+    "common text style": {
+        "prefix": "common_text_style",
+        "body": [
+            "TextStyle(",
+            "  fontWeight: FontWeight.w500,",
+            "  fontSize: 16,",
+            "  color: Color(0xff),",
+            ")$0"
+        ]
+    },
+    "common box shadow": {
+        "prefix": "common_box_shadow",
+        "body": [
+            "BoxShadow(",
+            "  offset: Offset(0$0, 0),",
+            "  blurRadius: 6,",
+            "  color: Color(0xff000000),",
+            "),"
+        ]
+    },
+    "common text field": {
+        "prefix": "common_text_field",
+        "body": [
+            "TextField(",
+            "  controller: controller$0,",
+            "  style: const TextStyle(",
+            "    fontWeight: FontWeight.w500,",
+            "    fontSize: 16,",
+            "    color: Color(0xff000000),",
+            "  ),",
+            "  decoration: const InputDecoration(",
+            "    border: InputBorder.none,",
+            "    hintText: '',",
+            "    hintStyle: TextStyle(",
+            "      fontWeight: FontWeight.w500,",
+            "      fontSize: 16,",
+            "      color: Color(0xff000000),",
+            "    ),",
+            "    contentPadding: EdgeInsets.all(0),",
+            "    isDense: true,",
+            "  ),",
+            "),"
+        ]
+    },
+    "common image icon": {
+        "prefix": "common_image_icon",
+        "body": [
+            "ImageIcon(",
+            "  AssetImage('$0'),",
+            "  size: 24,",
+            "  color: Color(0xff000000),",
+            "),"
+        ]
+    },
+    "common loading circle": {
+        "prefix": "common_loading_circle",
+        "body": "const Center(child: CircularProgressIndicator())"
+    },
+    "common text failed": {
+        "prefix": "common_text_failed",
+        "body": "Center(child: Text($0))"
+    },
+    "common bloc builder satte": {
+        "prefix": "common_bloc_state_builder",
+        "body": [
+            "if (state is StateLoading) {",
+            "  return const Center(child: CircularProgressIndicator());",
+            "}",
+            "if (state is StateFailed) {",
+            "  return Center(child: Text(state.failure.message));",
+            "}",
+            "if (state is StateLoaded) {",
+            "  List<Entity> list = state.list;",
+            "  if (list.isEmpty) {",
+            "    return const Center(child: Text('Empty'));",
+            "  }",
+            "  return ListView.builder(",
+            "    itemCount: list.length,",
+            "    itemBuilder: (context, index) {},",
+            "  );",
+            "}",
+            "return const SizedBox();"
+        ]
+    },
+    "common column": {
+        "prefix": "common_column",
+        "body": [
+            "Column(",
+            "  crossAxisAlignment: CrossAxisAlignment.start,",
+            "  children: [",
+            "    $0",
+            "  ],",
+            ")"
+        ]
+    }
+}
