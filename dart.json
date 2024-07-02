@@ -184,7 +184,7 @@
             "final class BlocFailed extends BlocState {",
             "  final Failure failure;",
             "",
-            "  const BlocFailed(this.failure);",
+            "  const BlocFailed({required this.failure});",
             "",
             "  @override",
             "  List<Object> get props => [failure];",
