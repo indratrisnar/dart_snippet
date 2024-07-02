@@ -162,5 +162,35 @@
             "  ],",
             ")"
         ]
+    },
+    "bloc reset emit": {
+        "prefix": "bloc_reset",
+        "body": "reset() => emit($0);"
+    },
+    "bloc state structure": {
+        "prefix": "bloc_state_structure",
+        "body": [
+            "sealed class BlocState extends Equatable {",
+            "  const BlocState();",
+            "",
+            "  @override",
+            "  List<Object> get props => [];",
+            "}",
+            "",
+            "final class BlocInitial extends BlocState {}",
+            "",
+            "final class BlocLoading extends BlocState {}",
+            "",
+            "final class BlocFailed extends BlocState {",
+            "  final Failure failure;",
+            "",
+            "  const BlocFailed(this.failure);",
+            "",
+            "  @override",
+            "  List<Object> get props => [failure];",
+            "}",
+            "",
+            "final class BlocSuccess extends BlocState {}"
+        ]
     }
 }
