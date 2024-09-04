@@ -163,6 +163,39 @@
             ")"
         ]
     },
+    "Common Image.asset": {
+        "prefix": "common_image_asset",
+        "body": [
+            "Image.asset(",
+            "  '$0',",
+            "  width: 50,",
+            "  height: 50,",
+            "  fit: BoxFit.cover,",
+            "),"
+        ]
+    },
+    "Common Image.network": {
+        "prefix": "common_image_network",
+        "body": [
+            "Image.network(",
+            "  '$0',",
+            "  width: 50,",
+            "  height: 50,",
+            "  fit: BoxFit.cover,",
+            "),"
+        ]
+    },
+    "Common Image.file": {
+        "prefix": "common_image_file",
+        "body": [
+            "Image.file(",
+            "  '$0',",
+            "  width: 50,",
+            "  height: 50,",
+            "  fit: BoxFit.cover,",
+            "),"
+        ]
+    },
     "BLoC Reset Emit": {
         "prefix": "bloc_reset",
         "body": "reset() => emit($0);"
@@ -217,6 +250,36 @@
             "}",
             "",
             "class $1State {}"
+        ]
+    },
+    "GetX: Obx State List": {
+        "prefix": "obx_state_list",
+        "body": [
+            "Obx(() {",
+            "  final state = $0Controller.state;",
+            "  final fetchStatus = state.fetchStatus;",
+            "  if (fetchStatus == FetchStatus.init) {",
+            "    return const SizedBox();",
+            "  }",
+            "  if (fetchStatus == FetchStatus.loading) {",
+            "    return const Center(child: CircularProgressIndicator.adaptive());",
+            "  }",
+            "  if (fetchStatus == FetchStatus.failed) {",
+            "    final String message = state.message;",
+            "    return Center(child: Text(message));",
+            "  }",
+            "  final list = state.list!;",
+            "  if (list.isEmpty) {",
+            "    return const Center(child: Text('No Data Yet'));",
+            "  }",
+            "  return ListView.builder(",
+            "    itemCount: list.length,",
+            "    itemBuilder: (context, index) {",
+            "      final item = list[index];",
+            "      return buildItem();",
+            "    },",
+            "  );",
+            "}),"
         ]
     }
 }
