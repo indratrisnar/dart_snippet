@@ -1,5 +1,5 @@
 {
-    "regular test": {
+    "Regular Test": {
         "prefix": "aaatest",
         "body": [
             "test(",
@@ -14,7 +14,7 @@
             ");"
         ]
     },
-    "widget test": {
+    "Widget Test": {
         "prefix": "aaatwidget",
         "body": [
             "testWidgets(",
@@ -29,7 +29,7 @@
             ");"
         ]
     },
-    "common container": {
+    "Common Container": {
         "prefix": "common_container",
         "body": [
             "Container(",
@@ -42,7 +42,7 @@
             ")$0"
         ]
     },
-    "common text": {
+    "Common Text": {
         "prefix": "common_text",
         "body": [
             "Text(",
@@ -55,7 +55,7 @@
             "),"
         ]
     },
-    "common gradient": {
+    "Common Gradient": {
         "prefix": "common_gradient",
         "body": [
             "LinearGradient(",
@@ -68,7 +68,7 @@
             "),"
         ]
     },
-    "common text style": {
+    "Common Text Style": {
         "prefix": "common_text_style",
         "body": [
             "TextStyle(",
@@ -78,7 +78,7 @@
             ")$0"
         ]
     },
-    "common box shadow": {
+    "Common Box Shadow": {
         "prefix": "common_box_shadow",
         "body": [
             "BoxShadow(",
@@ -88,7 +88,7 @@
             "),"
         ]
     },
-    "common text field": {
+    "Common Text Field": {
         "prefix": "common_text_field",
         "body": [
             "TextField(",
@@ -112,7 +112,7 @@
             "),"
         ]
     },
-    "common image icon": {
+    "Common Image Icon": {
         "prefix": "common_image_icon",
         "body": [
             "ImageIcon(",
@@ -122,15 +122,15 @@
             "),"
         ]
     },
-    "common loading circle": {
+    "Common Loading Circle": {
         "prefix": "common_loading_circle",
         "body": "const Center(child: CircularProgressIndicator())"
     },
-    "common text failed": {
+    "Common Text Failed": {
         "prefix": "common_text_failed",
         "body": "Center(child: Text($0))"
     },
-    "common bloc builder satte": {
+    "Common Bloc Builder state": {
         "prefix": "common_bloc_state_builder",
         "body": [
             "if (state is StateLoading) {",
@@ -152,7 +152,7 @@
             "return const SizedBox();"
         ]
     },
-    "common column": {
+    "Common Column": {
         "prefix": "common_column",
         "body": [
             "Column(",
@@ -163,11 +163,11 @@
             ")"
         ]
     },
-    "bloc reset emit": {
+    "BLoC Reset Emit": {
         "prefix": "bloc_reset",
         "body": "reset() => emit($0);"
     },
-    "bloc state structure": {
+    "BLoC State Structure": {
         "prefix": "bloc_state_structure",
         "body": [
             "sealed class BlocState extends Equatable {",
@@ -191,6 +191,32 @@
             "}",
             "",
             "final class BlocSuccess extends BlocState {}"
+        ]
+    },
+    "BLoC Set Emit": {
+        "prefix": "bloc_set",
+        "body": "set($0 data) => emit(data);"
+    },
+    "GetX Controller & State Class": {
+        "prefix": "getxc",
+        "body": [
+            "import 'package:get/get.dart';",
+            "",
+            "class $1Controller extends GetxController {",
+            "  final _state = $1State().obs;",
+            "  $1State get state => _state.value;",
+            "  set state($1State n) => _state.value = n;",
+            "",
+            "  fetchRequest() {}",
+            "",
+            "  executeRequest() {}",
+            "",
+            "  static delete() {",
+            "    Get.delete<$1Controller>(force: true);",
+            "  }",
+            "}",
+            "",
+            "class $1State {}"
         ]
     }
 }
