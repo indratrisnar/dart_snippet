@@ -281,5 +281,9 @@
             "  );",
             "}),"
         ]
+    },
+    "Route Name": {
+        "prefix": "rn",
+        "body": "static const routeName = '/$0';"
     }
 }
