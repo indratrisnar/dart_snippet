@@ -270,7 +270,7 @@
             "    final (success, message) = await $1DataSource.add();",
             "",
             "    state = state.copyWith(",
-            "      fetchStatus: success ? FetchStatus.loading : FetchStatus.loading,",
+            "      fetchStatus: success ? FetchStatus.success : FetchStatus.failed,",
             "      message: message,",
             "    );",
             "",
