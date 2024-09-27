@@ -130,17 +130,17 @@
         "prefix": "common_text_failed",
         "body": "Center(child: Text($0))"
     },
-    "Common Bloc Builder state": {
+    "Common Bloc State Builder Content": {
         "prefix": "common_bloc_state_builder",
         "body": [
-            "if (state is StateLoading) {",
+            "if (state is $0Loading) {",
             "  return const Center(child: CircularProgressIndicator());",
             "}",
-            "if (state is StateFailed) {",
+            "if (state is $0Failed) {",
             "  return Center(child: Text(state.failure.message));",
             "}",
-            "if (state is StateLoaded) {",
-            "  List<Entity> list = state.list;",
+            "if (state is $0Loaded) {",
+            "  List<$0Entity> list = state.list;",
             "  if (list.isEmpty) {",
             "    return const Center(child: Text('Empty'));",
             "  }",
