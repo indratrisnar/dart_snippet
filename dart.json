@@ -203,27 +203,27 @@
     "BLoC State Structure": {
         "prefix": "bloc_state_structure",
         "body": [
-            "sealed class BlocState extends Equatable {",
-            "  const BlocState();",
+            "sealed class $0State extends Equatable {",
+            "  const $0State();",
             "",
             "  @override",
             "  List<Object> get props => [];",
             "}",
             "",
-            "final class BlocInitial extends BlocState {}",
+            "final class $0Initial extends $0State {}",
             "",
-            "final class BlocLoading extends BlocState {}",
+            "final class $0Loading extends $0State {}",
             "",
-            "final class BlocFailed extends BlocState {",
+            "final class $0Failed extends $0State {",
             "  final Failure failure;",
             "",
-            "  const BlocFailed({required this.failure});",
+            "  const $0Failed({required this.failure});",
             "",
             "  @override",
             "  List<Object> get props => [failure];",
             "}",
             "",
-            "final class BlocSuccess extends BlocState {}"
+            "final class $0Success extends $0State {}"
         ]
     },
     "BLoC Set Emit": {
