@@ -173,6 +173,17 @@
       ")"
     ]
   },
+  "Common Row": {
+    "prefix": "common_row",
+    "body": [
+      "Row(",
+      "  crossAxisAlignment: CrossAxisAlignment.center,",
+      "  children: [",
+      "    $0",
+      "  ],",
+      ")"
+    ]
+  },
   "Common Image.asset": {
     "prefix": "common_image_asset",
     "body": [
@@ -454,5 +465,34 @@
   "Route Name": {
     "prefix": "rn",
     "body": "static const routeName = '/$0';"
+  },
+  "ListView Vertical": {
+    "prefix": "common_list",
+    "body": [
+      "ListView.builder(",
+      "  itemCount: $1.length,",
+      "  padding: const EdgeInsets.symmetric(horizontal: 16),",
+      "  physics: const BouncingScrollPhysics(),",
+      "  itemBuilder: (context, index) {",
+      "    final item = $1[index];",
+      "    return ;",
+      "  },",
+      ")"
+    ]
+  },
+  "ListView Vertical No Scroll": {
+    "prefix": "common_list_no_scroll",
+    "body": [
+      "ListView.builder(",
+      "  itemCount: $1.length,",
+      "  padding: const EdgeInsets.symmetric(horizontal: 16),",
+      "  shrinkWrap: true,",
+      "  physics: const NeverScrollableScrollPhysics(),",
+      "  itemBuilder: (context, index) {",
+      "    final item = $1[index];",
+      "    return ;",
+      "  },",
+      ")"
+    ]
   }
 }
