@@ -529,5 +529,93 @@
       "  ),",
       ")"
     ]
+  },
+  "GridView Vertical": {
+    "prefix": "common_grid",
+    "body": [
+      "GridView.builder(",
+      "  itemCount: $1.length,",
+      "  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(",
+      "    crossAxisCount: 2,",
+      "    mainAxisSpacing: 16,",
+      "    crossAxisSpacing: 16,",
+      "    childAspectRatio: 1,",
+      "  ),",
+      "  padding: const EdgeInsets.symmetric(horizontal: 16),",
+      "  physics: const BouncingScrollPhysics(),",
+      "  itemBuilder: (context, index) {",
+      "    final item = $1[index];",
+      "    return ;",
+      "  },",
+      "),"
+    ]
+  },
+  "GridView Vertical No Scroll": {
+    "prefix": "common_grid_no_scroll",
+    "body": [
+      "GridView.builder(",
+      "  itemCount: $1.length,",
+      "  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(",
+      "    crossAxisCount: 2,",
+      "    mainAxisSpacing: 16,",
+      "    crossAxisSpacing: 16,",
+      "    childAspectRatio: 1,",
+      "  ),",
+      "  padding: const EdgeInsets.symmetric(horizontal: 16),",
+      "  shrinkWrap: true,",
+      "  physics: const NeverScrollableScrollPhysics(),",
+      "  itemBuilder: (context, index) {",
+      "    final item = $1[index];",
+      "    return ;",
+      "  },",
+      "),"
+    ]
+  },
+  "GridView Horizontal": {
+    "prefix": "common_grid_horiz",
+    "body": [
+      "SizedBox(",
+      "  height: 300,",
+      "  child: GridView.builder(",
+      "    itemCount: $1.length,",
+      "    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(",
+      "      crossAxisCount: 2,",
+      "      mainAxisSpacing: 16,",
+      "      crossAxisSpacing: 16,",
+      "      childAspectRatio: 1,",
+      "    ),",
+      "    scrollDirection: Axis.horizontal,",
+      "    physics: const BouncingScrollPhysics(),",
+      "    itemBuilder: (context, index) {",
+      "      final item = $1[index];",
+      "      return ;",
+      "    },",
+      "  ),",
+      ")"
+    ]
+  },
+  "GridView Horizontal No Scroll": {
+    "prefix": "common_grid_horiz_no_scroll",
+    "body": [
+      "SizedBox(",
+      "  height: 300,",
+      "  child: GridView.builder(",
+      "    itemCount: $1.length,",
+      "    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(",
+      "      crossAxisCount: 2,",
+      "      mainAxisSpacing: 16,",
+      "      crossAxisSpacing: 16,",
+      "      childAspectRatio: 1,",
+      "    ),",
+      "    scrollDirection: Axis.horizontal,",
+      "    shrinkWrap: true,",
+      "    physics: const NeverScrollableScrollPhysics(),",
+      "    itemBuilder: (context, index) {",
+      "      final item = $1[index];",
+      "      return ;",
+      "    },",
+      "  ),",
+      ")"
+    ]
   }
 }
