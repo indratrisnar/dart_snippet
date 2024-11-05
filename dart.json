@@ -494,5 +494,40 @@
       "  },",
       ")"
     ]
+  },
+  "ListView Horizontal": {
+    "prefix": "common_list_horiz",
+    "body": [
+      "SizedBox(",
+      "  height: 150,",
+      "  child: ListView.builder(",
+      "    itemCount: $1.length,",
+      "    scrollDirection: Axis.horizontal,",
+      "    physics: const BouncingScrollPhysics(),",
+      "    itemBuilder: (context, index) {",
+      "      final item = $1[index];",
+      "      return ;",
+      "    },",
+      "  ),",
+      ")"
+    ]
+  },
+  "ListView Horizontal No Scroll": {
+    "prefix": "common_list_horiz_no_scroll",
+    "body": [
+      "SizedBox(",
+      "  height: 150,",
+      "  child: ListView.builder(",
+      "    itemCount: $1.length,",
+      "    scrollDirection: Axis.horizontal,",
+      "    shrinkWrap: true,",
+      "    physics: const NeverScrollableScrollPhysics(),",
+      "    itemBuilder: (context, index) {",
+      "      final item = $1[index];",
+      "      return ;",
+      "    },",
+      "  ),",
+      ")"
+    ]
   }
 }
