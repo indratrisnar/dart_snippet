@@ -1,448 +1,458 @@
 {
-    "Regular Test": {
-        "prefix": "aaatest",
-        "body": [
-            "test(",
-            "  '$0',",
-            "  () async {",
-            "    // arrange",
-            "",
-            "    // act",
-            "",
-            "    // assert",
-            "  },",
-            ");"
-        ]
-    },
-    "Widget Test": {
-        "prefix": "aaatwidget",
-        "body": [
-            "testWidgets(",
-            "  '$0',",
-            "   (tester) async {",
-            "   // arrange",
-            "",
-            "   // act",
-            "",
-            "   // assert",
-            "   },",
-            ");"
-        ]
-    },
-    "Common Container": {
-        "prefix": "common_container",
-        "body": [
-            "Container(",
-            "  width: 50,",
-            "  height: 50,",
-            "  decoration: BoxDecoration(",
-            "    borderRadius: BorderRadius.circular(0),",
-            "    color: Color(0xff),",
-            "  ),",
-            ")$0"
-        ]
-    },
-    "Common Text": {
-        "prefix": "common_text",
-        "body": [
-            "Text(",
-            "  '$0',",
-            "  style: TextStyle(",
-            "    fontWeight: FontWeight.w400,",
-            "    fontSize: 14,",
-            "    color: Color(0xff),",
-            "  ),",
-            "),"
-        ]
-    },
-    "Common Gradient": {
-        "prefix": "common_gradient",
-        "body": [
-            "LinearGradient(",
-            "  begin: Alignment.topCenter,",
-            "  end: Alignment.bottomCenter,",
-            "  colors: [",
-            "    Color(0xff$0),",
-            "    Color(0xff),",
-            "  ],",
-            "),"
-        ]
-    },
-    "Common Text Style": {
-        "prefix": "common_text_style",
-        "body": [
-            "TextStyle(",
-            "  fontWeight: FontWeight.w500,",
-            "  fontSize: 16,",
-            "  color: Color(0xff),",
-            ")$0"
-        ]
-    },
-    "Common Box Shadow": {
-        "prefix": "common_box_shadow",
-        "body": [
-            "BoxShadow(",
-            "  offset: Offset(0$0, 0),",
-            "  blurRadius: 6,",
-            "  color: Color(0xff000000),",
-            "),"
-        ]
-    },
-    "Common Text Field": {
-        "prefix": "common_text_field",
-        "body": [
-            "TextField(",
-            "  controller: controller$0,",
-            "  style: const TextStyle(",
-            "    fontWeight: FontWeight.w500,",
-            "    fontSize: 16,",
-            "    color: Color(0xff000000),",
-            "  ),",
-            "  decoration: const InputDecoration(",
-            "    border: InputBorder.none,",
-            "    hintText: '',",
-            "    hintStyle: TextStyle(",
-            "      fontWeight: FontWeight.w500,",
-            "      fontSize: 16,",
-            "      color: Color(0xff000000),",
-            "    ),",
-            "    contentPadding: EdgeInsets.all(0),",
-            "    isDense: true,",
-            "  ),",
-            "),"
-        ]
-    },
-    "Common Image Icon": {
-        "prefix": "common_image_icon",
-        "body": [
-            "ImageIcon(",
-            "  AssetImage('$0'),",
-            "  size: 24,",
-            "  color: Color(0xff000000),",
-            "),"
-        ]
-    },
-    "Common Loading Circle": {
-        "prefix": "common_loading_circle",
-        "body": "const Center(child: CircularProgressIndicator())"
-    },
-    "Common Text Failed": {
-        "prefix": "common_text_failed",
-        "body": "Center(child: Text($0))"
-    },
-    "Common Bloc State Builder Content": {
-        "prefix": "common_bloc_state_builder",
-        "body": [
-            "if (state is $0Loading) {",
-            "  return const Center(child: CircularProgressIndicator());",
-            "}",
-            "if (state is $0Failed) {",
-            "  return Center(child: Text(state.failure.message));",
-            "}",
-            "if (state is $0Loaded) {",
-            "  List<$0Entity> list = state.list;",
-            "  if (list.isEmpty) {",
-            "    return const Center(child: Text('Empty'));",
-            "  }",
-            "  return ListView.builder(",
-            "    itemCount: list.length,",
-            "    itemBuilder: (context, index) {},",
-            "  );",
-            "}",
-            "return const SizedBox();"
-        ]
-    },
-    "Common Column": {
-        "prefix": "common_column",
-        "body": [
-            "Column(",
-            "  crossAxisAlignment: CrossAxisAlignment.start,",
-            "  children: [",
-            "    $0",
-            "  ],",
-            ")"
-        ]
-    },
-    "Common Image.asset": {
-        "prefix": "common_image_asset",
-        "body": [
-            "Image.asset(",
-            "  '$0',",
-            "  width: 50,",
-            "  height: 50,",
-            "  fit: BoxFit.cover,",
-            "),"
-        ]
-    },
-    "Common Image.network": {
-        "prefix": "common_image_network",
-        "body": [
-            "Image.network(",
-            "  '$0',",
-            "  width: 50,",
-            "  height: 50,",
-            "  fit: BoxFit.cover,",
-            "),"
-        ]
-    },
-    "Common Image.file": {
-        "prefix": "common_image_file",
-        "body": [
-            "Image.file(",
-            "  '$0',",
-            "  width: 50,",
-            "  height: 50,",
-            "  fit: BoxFit.cover,",
-            "),"
-        ]
-    },
-    "BLoC Reset Emit": {
-        "prefix": "bloc_reset",
-        "body": "reset() => emit($0);"
-    },
-    "BLoC State Structure": {
-        "prefix": "bloc_state_structure",
-        "body": [
-            "sealed class $0State extends Equatable {",
-            "  const $0State();",
-            "",
-            "  @override",
-            "  List<Object> get props => [];",
-            "}",
-            "",
-            "final class $0Initial extends $0State {}",
-            "",
-            "final class $0Loading extends $0State {}",
-            "",
-            "final class $0Failed extends $0State {",
-            "  final Failure failure;",
-            "",
-            "  const $0Failed({required this.failure});",
-            "",
-            "  @override",
-            "  List<Object> get props => [failure];",
-            "}",
-            "",
-            "final class $0Success extends $0State {}"
-        ]
-    },
-    "BLoC Set Emit": {
-        "prefix": "bloc_set",
-        "body": "set($0 data) => emit(data);"
-    },
-    "GetX Controller & State Class": {
-        "prefix": "getxc",
-        "body": [
-            "import 'package:get/get.dart';",
-            "",
-            "class $1Controller extends GetxController {",
-            "  final _state = $1State().obs;",
-            "  $1State get state => _state.value;",
-            "  set state($1State n) => _state.value = n;",
-            "",
-            "  fetchRequest() {}",
-            "",
-            "  executeRequest() {}",
-            "",
-            "  static delete() {",
-            "    Get.delete<$1Controller>(force: true);",
-            "  }",
-            "}",
-            "",
-            "class $1State {}"
-        ]
-    },
-    "GetX Controller Execute": {
-        "prefix": "getxc_execute",
-        "body": [
-            "import 'package:get/get.dart';",
-            "",
-            "class $1Controller extends GetxController {",
-            "  final _state = $1State().obs;",
-            "  $1State get state => _state.value;",
-            "  set state($1State n) => _state.value = n;",
-            "",
-            "  Future<$1State> executeRequest() async {",
-            "    state = state.copyWith(",
-            "      fetchStatus: FetchStatus.loading,",
-            "    );",
-            "",
-            "    final (success, message) = await $1DataSource.add();",
-            "",
-            "    state = state.copyWith(",
-            "      fetchStatus: success ? FetchStatus.success : FetchStatus.failed,",
-            "      message: message,",
-            "    );",
-            "",
-            "    return state;",
-            "  }",
-            "",
-            "  static delete() {",
-            "    Get.delete<$1Controller>(force: true);",
-            "  }",
-            "}",
-            "",
-            "class $1State {",
-            "  final FetchStatus fetchStatus;",
-            "  final String message;",
-            "",
-            "  $1State({",
-            "    this.fetchStatus = FetchStatus.init,",
-            "    this.message = '',",
-            "  });",
-            "",
-            "  $1State copyWith({",
-            "    FetchStatus? fetchStatus,",
-            "    String? message,",
-            "  }) {",
-            "    return $1State(",
-            "      fetchStatus: fetchStatus ?? this.fetchStatus,",
-            "      message: message ?? this.message,",
-            "    );",
-            "  }",
-            "}"
-        ]
-    },
-    "GetX Controller Fetch List": {
-        "prefix": "getxc_fetch_list",
-        "body": [
-            "import 'package:get/get.dart';",
-            "",
-            "class $1Controller extends GetxController {",
-            "  final _state = $1State().obs;",
-            "  $1State get state => _state.value;",
-            "  set state($1State n) => _state.value = n;",
-            "",
-            "  Future<void> fetchRequest() async {",
-            "    state = state.copyWith(",
-            "      fetchStatus: FetchStatus.loading,",
-            "    );",
-            "",
-            "    final (success, message, list) = await $1DataSource.get();",
-            "",
-            "    state = state.copyWith(",
-            "      fetchStatus: success ? FetchStatus.success : FetchStatus.failed,",
-            "      message: message,",
-            "      list: list,",
-            "    );",
-            "  }",
-            "",
-            "  static delete() {",
-            "    Get.delete<$1Controller>(force: true);",
-            "  }",
-            "}",
-            "",
-            "class $1State {",
-            "  final FetchStatus fetchStatus;",
-            "  final String message;",
-            "  final List<$1Model>? list;",
-            "",
-            "  $1State({",
-            "    this.fetchStatus = FetchStatus.init,",
-            "    this.message = '',",
-            "    this.list,",
-            "  });",
-            "",
-            "  $1State copyWith({",
-            "    FetchStatus? fetchStatus,",
-            "    String? message,",
-            "    List<$1Model>? list,",
-            "  }) {",
-            "    return $1State(",
-            "      fetchStatus: fetchStatus ?? this.fetchStatus,",
-            "      message: message ?? this.message,",
-            "      list: list ?? this.list,",
-            "    );",
-            "  }",
-            "}"
-        ]
-    },
-    "GetX Controller Fetch Single": {
-        "prefix": "getxc_fetch_single",
-        "body": [
-            "import 'package:get/get.dart';",
-            "",
-            "class $1Controller extends GetxController {",
-            "  final _state = $1State().obs;",
-            "  $1State get state => _state.value;",
-            "  set state($1State n) => _state.value = n;",
-            "",
-            "  Future<void> fetchRequest() async {",
-            "    state = state.copyWith(",
-            "      fetchStatus: FetchStatus.loading,",
-            "    );",
-            "",
-            "    final (success, message, data) = await $1DataSource.get();",
-            "",
-            "    state = state.copyWith(",
-            "      fetchStatus: success ? FetchStatus.success : FetchStatus.failed,",
-            "      message: message,",
-            "      data: data,",
-            "    );",
-            "  }",
-            "",
-            "  static delete() {",
-            "    Get.delete<$1Controller>(force: true);",
-            "  }",
-            "}",
-            "",
-            "class $1State {",
-            "  final FetchStatus fetchStatus;",
-            "  final String message;",
-            "  final $1Model? data;",
-            "",
-            "  $1State({",
-            "    this.fetchStatus = FetchStatus.init,",
-            "    this.message = '',",
-            "    this.data,",
-            "  });",
-            "",
-            "  $1State copyWith({",
-            "    FetchStatus? fetchStatus,",
-            "    String? message,",
-            "    $1Model? data,",
-            "  }) {",
-            "    return $1State(",
-            "      fetchStatus: fetchStatus ?? this.fetchStatus,",
-            "      message: message ?? this.message,",
-            "      data: data ?? this.data,",
-            "    );",
-            "  }",
-            "}"
-        ]
-    },
-    "GetX: Obx State List": {
-        "prefix": "obx_state_list",
-        "body": [
-            "Obx(() {",
-            "  final state = $0Controller.state;",
-            "  final fetchStatus = state.fetchStatus;",
-            "  if (fetchStatus == FetchStatus.init) {",
-            "    return const SizedBox();",
-            "  }",
-            "  if (fetchStatus == FetchStatus.loading) {",
-            "    return const Center(child: CircularProgressIndicator.adaptive());",
-            "  }",
-            "  if (fetchStatus == FetchStatus.failed) {",
-            "    final String message = state.message;",
-            "    return Center(child: Text(message));",
-            "  }",
-            "  final list = state.list!;",
-            "  if (list.isEmpty) {",
-            "    return const Center(child: Text('No Data Yet'));",
-            "  }",
-            "  return ListView.builder(",
-            "    itemCount: list.length,",
-            "    itemBuilder: (context, index) {",
-            "      final item = list[index];",
-            "      return buildItem();",
-            "    },",
-            "  );",
-            "}),"
-        ]
-    },
-    "Route Name": {
-        "prefix": "rn",
-        "body": "static const routeName = '/$0';"
-    }
+  "Regular Test": {
+    "prefix": "aaatest",
+    "body": [
+      "test(",
+      "  '$0',",
+      "  () async {",
+      "    // arrange",
+      "",
+      "    // act",
+      "",
+      "    // assert",
+      "  },",
+      ");"
+    ]
+  },
+  "Widget Test": {
+    "prefix": "aaatwidget",
+    "body": [
+      "testWidgets(",
+      "  '$0',",
+      "   (tester) async {",
+      "   // arrange",
+      "",
+      "   // act",
+      "",
+      "   // assert",
+      "   },",
+      ");"
+    ]
+  },
+  "Common Container": {
+    "prefix": "common_container",
+    "body": [
+      "Container(",
+      "  width: 50,",
+      "  height: 50,",
+      "  decoration: BoxDecoration(",
+      "    borderRadius: BorderRadius.circular(0),",
+      "    color: Color(0xff),",
+      "  ),",
+      ")$0"
+    ]
+  },
+  "Common Text": {
+    "prefix": "common_text",
+    "body": [
+      "Text(",
+      "  '$0',",
+      "  style: TextStyle(",
+      "    fontWeight: FontWeight.w400,",
+      "    fontSize: 14,",
+      "    color: Color(0xff),",
+      "  ),",
+      "),"
+    ]
+  },
+  "Common Gradient": {
+    "prefix": "common_gradient",
+    "body": [
+      "LinearGradient(",
+      "  begin: Alignment.topCenter,",
+      "  end: Alignment.bottomCenter,",
+      "  colors: [",
+      "    Color(0xff$0),",
+      "    Color(0xff),",
+      "  ],",
+      "),"
+    ]
+  },
+  "Common Text Style": {
+    "prefix": "common_text_style",
+    "body": [
+      "TextStyle(",
+      "  fontWeight: FontWeight.w500,",
+      "  fontSize: 16,",
+      "  color: Color(0xff),",
+      ")$0"
+    ]
+  },
+  "Common Box Shadow": {
+    "prefix": "common_box_shadow",
+    "body": [
+      "BoxShadow(",
+      "  offset: Offset(0$0, 0),",
+      "  blurRadius: 6,",
+      "  color: Color(0xff000000),",
+      "),"
+    ]
+  },
+  "Common Text Field": {
+    "prefix": "common_text_field",
+    "body": [
+      "TextField(",
+      "  controller: controller$0,",
+      "  style: const TextStyle(",
+      "    fontWeight: FontWeight.w500,",
+      "    fontSize: 16,",
+      "    color: Color(0xff000000),",
+      "  ),",
+      "  decoration: const InputDecoration(",
+      "    border: InputBorder.none,",
+      "    hintText: '',",
+      "    hintStyle: TextStyle(",
+      "      fontWeight: FontWeight.w500,",
+      "      fontSize: 16,",
+      "      color: Color(0xff000000),",
+      "    ),",
+      "    contentPadding: EdgeInsets.all(0),",
+      "    isDense: true,",
+      "  ),",
+      "),"
+    ]
+  },
+  "Common Icon": {
+    "prefix": "common_icon",
+    "body": [
+      "Icon(",
+      "  Icons.add,",
+      "  size: 24,",
+      "  color: Colors.grey,",
+      ")"
+    ]
+  },
+  "Common Image Icon": {
+    "prefix": "common_image_icon",
+    "body": [
+      "ImageIcon(",
+      "  AssetImage('$0'),",
+      "  size: 24,",
+      "  color: Color(0xff000000),",
+      "),"
+    ]
+  },
+  "Common Loading Circle": {
+    "prefix": "common_loading_circle",
+    "body": "const Center(child: CircularProgressIndicator())"
+  },
+  "Common Text Failed": {
+    "prefix": "common_text_failed",
+    "body": "Center(child: Text($0))"
+  },
+  "Common Bloc State Builder Content": {
+    "prefix": "common_bloc_state_builder",
+    "body": [
+      "if (state is $0Loading) {",
+      "  return const Center(child: CircularProgressIndicator());",
+      "}",
+      "if (state is $0Failed) {",
+      "  return Center(child: Text(state.failure.message));",
+      "}",
+      "if (state is $0Loaded) {",
+      "  List<$0Entity> list = state.list;",
+      "  if (list.isEmpty) {",
+      "    return const Center(child: Text('Empty'));",
+      "  }",
+      "  return ListView.builder(",
+      "    itemCount: list.length,",
+      "    itemBuilder: (context, index) {},",
+      "  );",
+      "}",
+      "return const SizedBox();"
+    ]
+  },
+  "Common Column": {
+    "prefix": "common_column",
+    "body": [
+      "Column(",
+      "  crossAxisAlignment: CrossAxisAlignment.start,",
+      "  children: [",
+      "    $0",
+      "  ],",
+      ")"
+    ]
+  },
+  "Common Image.asset": {
+    "prefix": "common_image_asset",
+    "body": [
+      "Image.asset(",
+      "  '$0',",
+      "  width: 50,",
+      "  height: 50,",
+      "  fit: BoxFit.cover,",
+      "),"
+    ]
+  },
+  "Common Image.network": {
+    "prefix": "common_image_network",
+    "body": [
+      "Image.network(",
+      "  '$0',",
+      "  width: 50,",
+      "  height: 50,",
+      "  fit: BoxFit.cover,",
+      "),"
+    ]
+  },
+  "Common Image.file": {
+    "prefix": "common_image_file",
+    "body": [
+      "Image.file(",
+      "  '$0',",
+      "  width: 50,",
+      "  height: 50,",
+      "  fit: BoxFit.cover,",
+      "),"
+    ]
+  },
+  "BLoC Reset Emit": {
+    "prefix": "bloc_reset",
+    "body": "reset() => emit($0);"
+  },
+  "BLoC State Structure": {
+    "prefix": "bloc_state_structure",
+    "body": [
+      "sealed class $0State extends Equatable {",
+      "  const $0State();",
+      "",
+      "  @override",
+      "  List<Object> get props => [];",
+      "}",
+      "",
+      "final class $0Initial extends $0State {}",
+      "",
+      "final class $0Loading extends $0State {}",
+      "",
+      "final class $0Failed extends $0State {",
+      "  final Failure failure;",
+      "",
+      "  const $0Failed({required this.failure});",
+      "",
+      "  @override",
+      "  List<Object> get props => [failure];",
+      "}",
+      "",
+      "final class $0Success extends $0State {}"
+    ]
+  },
+  "BLoC Set Emit": {
+    "prefix": "bloc_set",
+    "body": "set($0 data) => emit(data);"
+  },
+  "GetX Controller & State Class": {
+    "prefix": "getxc",
+    "body": [
+      "import 'package:get/get.dart';",
+      "",
+      "class $1Controller extends GetxController {",
+      "  final _state = $1State().obs;",
+      "  $1State get state => _state.value;",
+      "  set state($1State n) => _state.value = n;",
+      "",
+      "  fetchRequest() {}",
+      "",
+      "  executeRequest() {}",
+      "",
+      "  static delete() {",
+      "    Get.delete<$1Controller>(force: true);",
+      "  }",
+      "}",
+      "",
+      "class $1State {}"
+    ]
+  },
+  "GetX Controller Execute": {
+    "prefix": "getxc_execute",
+    "body": [
+      "import 'package:get/get.dart';",
+      "",
+      "class $1Controller extends GetxController {",
+      "  final _state = $1State().obs;",
+      "  $1State get state => _state.value;",
+      "  set state($1State n) => _state.value = n;",
+      "",
+      "  Future<$1State> executeRequest() async {",
+      "    state = state.copyWith(",
+      "      fetchStatus: FetchStatus.loading,",
+      "    );",
+      "",
+      "    final (success, message) = await $1DataSource.add();",
+      "",
+      "    state = state.copyWith(",
+      "      fetchStatus: success ? FetchStatus.success : FetchStatus.failed,",
+      "      message: message,",
+      "    );",
+      "",
+      "    return state;",
+      "  }",
+      "",
+      "  static delete() {",
+      "    Get.delete<$1Controller>(force: true);",
+      "  }",
+      "}",
+      "",
+      "class $1State {",
+      "  final FetchStatus fetchStatus;",
+      "  final String message;",
+      "",
+      "  $1State({",
+      "    this.fetchStatus = FetchStatus.init,",
+      "    this.message = '',",
+      "  });",
+      "",
+      "  $1State copyWith({",
+      "    FetchStatus? fetchStatus,",
+      "    String? message,",
+      "  }) {",
+      "    return $1State(",
+      "      fetchStatus: fetchStatus ?? this.fetchStatus,",
+      "      message: message ?? this.message,",
+      "    );",
+      "  }",
+      "}"
+    ]
+  },
+  "GetX Controller Fetch List": {
+    "prefix": "getxc_fetch_list",
+    "body": [
+      "import 'package:get/get.dart';",
+      "",
+      "class $1Controller extends GetxController {",
+      "  final _state = $1State().obs;",
+      "  $1State get state => _state.value;",
+      "  set state($1State n) => _state.value = n;",
+      "",
+      "  Future<void> fetchRequest() async {",
+      "    state = state.copyWith(",
+      "      fetchStatus: FetchStatus.loading,",
+      "    );",
+      "",
+      "    final (success, message, list) = await $1DataSource.get();",
+      "",
+      "    state = state.copyWith(",
+      "      fetchStatus: success ? FetchStatus.success : FetchStatus.failed,",
+      "      message: message,",
+      "      list: list,",
+      "    );",
+      "  }",
+      "",
+      "  static delete() {",
+      "    Get.delete<$1Controller>(force: true);",
+      "  }",
+      "}",
+      "",
+      "class $1State {",
+      "  final FetchStatus fetchStatus;",
+      "  final String message;",
+      "  final List<$1Model>? list;",
+      "",
+      "  $1State({",
+      "    this.fetchStatus = FetchStatus.init,",
+      "    this.message = '',",
+      "    this.list,",
+      "  });",
+      "",
+      "  $1State copyWith({",
+      "    FetchStatus? fetchStatus,",
+      "    String? message,",
+      "    List<$1Model>? list,",
+      "  }) {",
+      "    return $1State(",
+      "      fetchStatus: fetchStatus ?? this.fetchStatus,",
+      "      message: message ?? this.message,",
+      "      list: list ?? this.list,",
+      "    );",
+      "  }",
+      "}"
+    ]
+  },
+  "GetX Controller Fetch Single": {
+    "prefix": "getxc_fetch_single",
+    "body": [
+      "import 'package:get/get.dart';",
+      "",
+      "class $1Controller extends GetxController {",
+      "  final _state = $1State().obs;",
+      "  $1State get state => _state.value;",
+      "  set state($1State n) => _state.value = n;",
+      "",
+      "  Future<void> fetchRequest() async {",
+      "    state = state.copyWith(",
+      "      fetchStatus: FetchStatus.loading,",
+      "    );",
+      "",
+      "    final (success, message, data) = await $1DataSource.get();",
+      "",
+      "    state = state.copyWith(",
+      "      fetchStatus: success ? FetchStatus.success : FetchStatus.failed,",
+      "      message: message,",
+      "      data: data,",
+      "    );",
+      "  }",
+      "",
+      "  static delete() {",
+      "    Get.delete<$1Controller>(force: true);",
+      "  }",
+      "}",
+      "",
+      "class $1State {",
+      "  final FetchStatus fetchStatus;",
+      "  final String message;",
+      "  final $1Model? data;",
+      "",
+      "  $1State({",
+      "    this.fetchStatus = FetchStatus.init,",
+      "    this.message = '',",
+      "    this.data,",
+      "  });",
+      "",
+      "  $1State copyWith({",
+      "    FetchStatus? fetchStatus,",
+      "    String? message,",
+      "    $1Model? data,",
+      "  }) {",
+      "    return $1State(",
+      "      fetchStatus: fetchStatus ?? this.fetchStatus,",
+      "      message: message ?? this.message,",
+      "      data: data ?? this.data,",
+      "    );",
+      "  }",
+      "}"
+    ]
+  },
+  "GetX: Obx State List": {
+    "prefix": "obx_state_list",
+    "body": [
+      "Obx(() {",
+      "  final state = $0Controller.state;",
+      "  final fetchStatus = state.fetchStatus;",
+      "  if (fetchStatus == FetchStatus.init) {",
+      "    return const SizedBox();",
+      "  }",
+      "  if (fetchStatus == FetchStatus.loading) {",
+      "    return const Center(child: CircularProgressIndicator.adaptive());",
+      "  }",
+      "  if (fetchStatus == FetchStatus.failed) {",
+      "    final String message = state.message;",
+      "    return Center(child: Text(message));",
+      "  }",
+      "  final list = state.list!;",
+      "  if (list.isEmpty) {",
+      "    return const Center(child: Text('No Data Yet'));",
+      "  }",
+      "  return ListView.builder(",
+      "    itemCount: list.length,",
+      "    itemBuilder: (context, index) {",
+      "      final item = list[index];",
+      "      return buildItem();",
+      "    },",
+      "  );",
+      "}),"
+    ]
+  },
+  "Route Name": {
+    "prefix": "rn",
+    "body": "static const routeName = '/$0';"
+  }
 }
