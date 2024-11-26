@@ -466,6 +466,10 @@
     "prefix": "rn",
     "body": "static const routeName = '/$0';"
   },
+  "Navigator Pop": {
+    "prefix": "n_pop",
+    "body": "Navigator.pop(context);"
+  },
   "ListView Vertical": {
     "prefix": "common_list",
     "body": [
