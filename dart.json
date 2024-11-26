@@ -617,5 +617,34 @@
       "  ),",
       ")"
     ]
+  },
+  "Input Validation Is Empty": {
+    "prefix": "common_input_validation_empty",
+    "body": [
+      "final $1 = $1Controller.text;",
+      "if ($1 == '') {",
+      "  ScaffoldMessenger.of(context).showSnackBar(",
+      "    const SnackBar(",
+      "      content: Text(",
+      "        '$1 must be filled',",
+      "        style: TextStyle(color: Colors.white),",
+      "      ),",
+      "      duration: Duration(seconds: 2),",
+      "      backgroundColor: Colors.red,",
+      "    ),",
+      "  );",
+      "  return;",
+      "}"
+    ]
+  },
+  "Input Validation Is Empty & DInfo": {
+    "prefix": "common_input_validation_empty_dinfo",
+    "body": [
+      "final $1 = $1Controller.text;",
+      "if ($1 == '') {",
+      "  DInfo.toastError('$1 must be filled');",
+      "  return;",
+      "}"
+    ]
   }
 }
