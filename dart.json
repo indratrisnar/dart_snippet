@@ -646,5 +646,34 @@
       "  return;",
       "}"
     ]
+  },
+  "GetX: Check State for execute": {
+    "prefix": "getx_check_state",
+    "body": [
+      "if (state.fetchStatus == FetchStatus.failed) {",
+      "  DInfo.toastError(state.message);",
+      "  return;",
+      "}",
+      "if (state.fetchStatus == FetchStatus.success) {",
+      "  DInfo.toastSuccess(state.message);",
+      "  return;",
+      "}"
+    ]
+  },
+  "GetX: Check State Builder": {
+    "prefix": "getx_check_state_builder",
+    "body": [
+      "final state = $1Controller.state;",
+      "if (state.fetchStatus == FetchStatus.init) {",
+      "  return const SizedBox();",
+      "}",
+      "if (state.fetchStatus == FetchStatus.loading) {",
+      "  return const Center(child: CircularProgressIndicator());",
+      "}",
+      "if (state.fetchStatus == FetchStatus.loading) {",
+      "  return Center(child: Text(state.message));",
+      "}",
+      "return const Text('Success');"
+    ]
   }
 }
