@@ -678,7 +678,7 @@
       "if (state.fetchStatus == FetchStatus.loading) {",
       "  return const Center(child: CircularProgressIndicator());",
       "}",
-      "if (state.fetchStatus == FetchStatus.loading) {",
+      "if (state.fetchStatus == FetchStatus.failed) {",
       "  return Center(child: Text(state.message));",
       "}",
       "return const Text('Success');"
