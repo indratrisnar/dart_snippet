@@ -50,7 +50,7 @@
       "  style: TextStyle(",
       "    fontWeight: FontWeight.w400,",
       "    fontSize: 14,",
-      "    color: Color(0xff),",
+      "    color: Colors.black45,",
       "  ),",
       "),"
     ]
