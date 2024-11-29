@@ -78,7 +78,7 @@
       "TextStyle(",
       "  fontWeight: FontWeight.w500,",
       "  fontSize: 16,",
-      "  color: Color(0xff),",
+      "  color: Colors.black45,",
       ")$0"
     ]
   },
