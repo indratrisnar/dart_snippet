@@ -272,6 +272,19 @@
       "return const Text('success');"
     ]
   },
+  "BLoC: Check State for execute": {
+    "prefix": "bloc_check_state",
+    "body": [
+      "if (state is $0Failed) {",
+      "  DInfo.toastError(state.message);",
+      "  return;",
+      "}",
+      "if (state is $0Success) {",
+      "  DInfo.toastSuccess(state.message);",
+      "  return;",
+      "}"
+    ]
+  },
   "GetX Controller & State Class": {
     "prefix": "getxc",
     "body": [
