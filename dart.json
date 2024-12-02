@@ -224,7 +224,10 @@
       "  final String message;",
       "}",
       "",
-      "final class $0Success extends $0State {}"
+      "final class $0Success extends $0State {",
+      "  const $0Success({required this.message});",
+      "  final String message;",
+      "}"
     ]
   },
   "BLoC: State Structure & Equatable": {
