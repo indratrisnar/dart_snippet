@@ -144,28 +144,6 @@
     "prefix": "common_text_failed",
     "body": "Center(child: Text($0))"
   },
-  "Common Bloc State Builder Content": {
-    "prefix": "common_bloc_state_builder",
-    "body": [
-      "if (state is $0Loading) {",
-      "  return const Center(child: CircularProgressIndicator());",
-      "}",
-      "if (state is $0Failed) {",
-      "  return Center(child: Text(state.failure.message));",
-      "}",
-      "if (state is $0Loaded) {",
-      "  List<$0Entity> list = state.list;",
-      "  if (list.isEmpty) {",
-      "    return const Center(child: Text('Empty'));",
-      "  }",
-      "  return ListView.builder(",
-      "    itemCount: list.length,",
-      "    itemBuilder: (context, index) {},",
-      "  );",
-      "}",
-      "return const SizedBox();"
-    ]
-  },
   "Common Column": {
     "prefix": "common_column",
     "body": [
@@ -221,11 +199,15 @@
       "),"
     ]
   },
-  "BLoC Reset Emit": {
+  "BLoC: Reset Emit": {
     "prefix": "bloc_reset",
     "body": "reset() => emit($0);"
   },
-  "BLoC State Structure": {
+  "BLoC: Set Emit": {
+    "prefix": "bloc_set",
+    "body": "set($0 data) => emit(data);"
+  },
+  "BLoC: State Structure": {
     "prefix": "bloc_state_structure",
     "body": [
       "@immutable",
@@ -245,7 +227,7 @@
       "final class $0Success extends $0State {}"
     ]
   },
-  "BLoC State Structure & Equatable": {
+  "BLoC: State Structure & Equatable": {
     "prefix": "bloc_state_structure_equatable",
     "body": [
       "@immutable",
@@ -272,9 +254,20 @@
       "final class $0Success extends $0State {}"
     ]
   },
-  "BLoC Set Emit": {
-    "prefix": "bloc_set",
-    "body": "set($0 data) => emit(data);"
+  "BLoC: Check State Builder": {
+    "prefix": "bloc_check_state_builder",
+    "body": [
+      "if (state is $0Initial){",
+      "  return const SizedBox();",
+      "}",
+      "if (state is $0Loading) {",
+      "  return const Center(child: CircularProgressIndicator());",
+      "}",
+      "if (state is $0Failed) {",
+      "  return Center(child: Text(state.message));",
+      "}",
+      "return const Text('success');"
+    ]
   },
   "GetX Controller & State Class": {
     "prefix": "getxc",
@@ -487,6 +480,35 @@
       "}),"
     ]
   },
+  "GetX: Check State for execute": {
+    "prefix": "getx_check_state",
+    "body": [
+      "if (state.fetchStatus == FetchStatus.failed) {",
+      "  DInfo.toastError(state.message);",
+      "  return;",
+      "}",
+      "if (state.fetchStatus == FetchStatus.success) {",
+      "  DInfo.toastSuccess(state.message);",
+      "  return;",
+      "}"
+    ]
+  },
+  "GetX: Check State Builder": {
+    "prefix": "getx_check_state_builder",
+    "body": [
+      "final state = $1Controller.state;",
+      "if (state.fetchStatus == FetchStatus.init) {",
+      "  return const SizedBox();",
+      "}",
+      "if (state.fetchStatus == FetchStatus.loading) {",
+      "  return const Center(child: CircularProgressIndicator());",
+      "}",
+      "if (state.fetchStatus == FetchStatus.failed) {",
+      "  return Center(child: Text(state.message));",
+      "}",
+      "return const Text('Success');"
+    ]
+  },
   "Route Name": {
     "prefix": "rn",
     "body": "static const routeName = '/$0';"
@@ -674,35 +696,6 @@
       "  DInfo.toastError('$1 must be filled');",
       "  return;",
       "}"
-    ]
-  },
-  "GetX: Check State for execute": {
-    "prefix": "getx_check_state",
-    "body": [
-      "if (state.fetchStatus == FetchStatus.failed) {",
-      "  DInfo.toastError(state.message);",
-      "  return;",
-      "}",
-      "if (state.fetchStatus == FetchStatus.success) {",
-      "  DInfo.toastSuccess(state.message);",
-      "  return;",
-      "}"
-    ]
-  },
-  "GetX: Check State Builder": {
-    "prefix": "getx_check_state_builder",
-    "body": [
-      "final state = $1Controller.state;",
-      "if (state.fetchStatus == FetchStatus.init) {",
-      "  return const SizedBox();",
-      "}",
-      "if (state.fetchStatus == FetchStatus.loading) {",
-      "  return const Center(child: CircularProgressIndicator());",
-      "}",
-      "if (state.fetchStatus == FetchStatus.failed) {",
-      "  return Center(child: Text(state.message));",
-      "}",
-      "return const Text('Success');"
     ]
   }
 }
