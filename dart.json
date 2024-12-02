@@ -228,6 +228,27 @@
   "BLoC State Structure": {
     "prefix": "bloc_state_structure",
     "body": [
+      "@immutable",
+      "sealed class $0State {",
+      "  const $0State();",
+      "}",
+      "",
+      "final class $0Initial extends $0State {}",
+      "",
+      "final class $0Loading extends $0State {}",
+      "",
+      "final class $0Failed extends $0State {",
+      "  const $0Failed({required this.message});",
+      "  final String message;",
+      "}",
+      "",
+      "final class $0Success extends $0State {}"
+    ]
+  },
+  "BLoC State Structure & Equatable": {
+    "prefix": "bloc_state_structure_equatable",
+    "body": [
+      "@immutable",
       "sealed class $0State extends Equatable {",
       "  const $0State();",
       "",
