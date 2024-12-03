@@ -260,16 +260,16 @@
   "BLoC: Check State Builder": {
     "prefix": "bloc_check_state_builder",
     "body": [
-      "if (state is $0Initial){",
-      "  return const SizedBox();",
-      "}",
       "if (state is $0Loading) {",
       "  return const Center(child: CircularProgressIndicator());",
       "}",
       "if (state is $0Failed) {",
       "  return Center(child: Text(state.message));",
       "}",
-      "return const Text('success');"
+      "if (state is $0Success) {",
+      "  return const Text('success');",
+      "}",
+      "return const SizedBox();"
     ]
   },
   "BLoC: Check State for execute": {
