@@ -76,7 +76,7 @@
     "prefix": "common_text_style",
     "body": [
       "TextStyle(",
-      "  fontWeight: FontWeight.w500,",
+      "  fontWeight: FontWeight.w400,",
       "  fontSize: 16,",
       "  color: Colors.black45,",
       ")$0"
