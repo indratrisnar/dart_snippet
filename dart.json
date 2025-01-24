@@ -29,6 +29,14 @@
       ");"
     ]
   },
+  "Common AppBar": {
+    "prefix": "common_appbar",
+    "body": [
+      "AppBar(",
+      "  title: Text('$1'),",
+      ")"
+    ]
+  },
   "Common Container": {
     "prefix": "common_container",
     "body": [
