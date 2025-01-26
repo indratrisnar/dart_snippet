@@ -37,6 +37,15 @@
       ")"
     ]
   },
+  "Common Button": {
+    "prefix": "common_button",
+    "body": [
+      "FilledButton(",
+      "  onPressed: () {},",
+      "  child: Text('$1'),",
+      ")"
+    ]
+  },
   "Common Container": {
     "prefix": "common_container",
     "body": [
