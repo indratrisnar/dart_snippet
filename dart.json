@@ -550,6 +550,10 @@
     "prefix": "n_pop",
     "body": "Navigator.pop(context);"
   },
+  "Navigator Push Name": {
+    "prefix": "n_push",
+    "body": "Navigator.pushNamed(context, '$0');"
+  },
   "ListView Vertical": {
     "prefix": "common_list",
     "body": [
