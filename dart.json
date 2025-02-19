@@ -69,7 +69,7 @@
       "    fontSize: 14,",
       "    color: Colors.black45,",
       "  ),",
-      "),"
+      ")"
     ]
   },
   "Common Lorem Ipsum": {
@@ -86,7 +86,7 @@
       "    Color(0xff$0),",
       "    Color(0xff),",
       "  ],",
-      "),"
+      ")"
     ]
   },
   "Common Text Style": {
@@ -106,7 +106,7 @@
       "  offset: Offset(0$0, 0),",
       "  blurRadius: 6,",
       "  color: Color(0xff000000),",
-      "),"
+      ")"
     ]
   },
   "Common Text Field": {
@@ -130,7 +130,7 @@
       "    contentPadding: EdgeInsets.all(0),",
       "    isDense: true,",
       "  ),",
-      "),"
+      ")"
     ]
   },
   "Common Icon": {
@@ -150,7 +150,7 @@
       "  AssetImage('$0'),",
       "  size: 24,",
       "  color: Color(0xff000000),",
-      "),"
+      ")"
     ]
   },
   "Common Loading Circle": {
@@ -191,7 +191,7 @@
       "  width: 50,",
       "  height: 50,",
       "  fit: BoxFit.cover,",
-      "),"
+      ")"
     ]
   },
   "Common Image.network": {
@@ -202,7 +202,7 @@
       "  width: 50,",
       "  height: 50,",
       "  fit: BoxFit.cover,",
-      "),"
+      ")"
     ]
   },
   "Common Image.file": {
@@ -213,7 +213,7 @@
       "  width: 50,",
       "  height: 50,",
       "  fit: BoxFit.cover,",
-      "),"
+      ")"
     ]
   },
   "BLoC: Reset Emit": {
@@ -510,7 +510,7 @@
       "      return buildItem();",
       "    },",
       "  );",
-      "}),"
+      "})"
     ]
   },
   "GetX: Check State for execute": {
@@ -631,7 +631,7 @@
       "    final item = $1[index];",
       "    return ;",
       "  },",
-      "),"
+      ")"
     ]
   },
   "GridView Vertical No Scroll": {
@@ -652,7 +652,7 @@
       "    final item = $1[index];",
       "    return ;",
       "  },",
-      "),"
+      ")"
     ]
   },
   "GridView Horizontal": {
@@ -700,6 +700,13 @@
       "    },",
       "  ),",
       ")"
+    ]
+  },
+  "Basic Input Validation": {
+    "prefix": "common_input_validation_basic",
+    "body": [
+      "final $1 = $1Controller.text;",
+      "if ($1 == '') return;"
     ]
   },
   "Input Validation Is Empty": {
