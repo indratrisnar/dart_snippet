@@ -147,7 +147,7 @@
     "prefix": "common_image_icon",
     "body": [
       "ImageIcon(",
-      "  AssetImage('$0'),",
+      "  AssetImage('assets/icons/$0'),",
       "  size: 24,",
       "  color: Color(0xff000000),",
       ")"
