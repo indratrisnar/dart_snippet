@@ -157,8 +157,8 @@
     "prefix": "common_loading_circle",
     "body": "const Center(child: CircularProgressIndicator())"
   },
-  "Common Text Failed": {
-    "prefix": "common_text_failed",
+  "Common Center Text": {
+    "prefix": "common_center_text",
     "body": "Center(child: Text($0))"
   },
   "Common Column": {
