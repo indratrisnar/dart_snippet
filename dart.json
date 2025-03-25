@@ -1101,5 +1101,13 @@
       "  }",
       "}"
     ]
+  },
+  "Future Void Function": {
+    "prefix": "future_void_fun",
+    "body": "Future<void> $0() async {}"
+  },
+  "Future Type Function": {
+    "prefix": "future_type_fun",
+    "body": "Future<$1> $2() async {}"
   }
 }
